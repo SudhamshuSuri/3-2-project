@@ -25,7 +25,7 @@ def set_direction(pin, direction):
     elif direction == "reverse":
         GPIO.output(pin, GPIO.LOW)
     else:
-        raise ValueError("Invalid direction")
+        raise ValueError("Invalid direction: {}".format(direction))
 
 # Create a PWM object for the motor
 pwm = GPIO.PWM(motorPins[0], 100)
