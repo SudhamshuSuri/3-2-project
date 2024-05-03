@@ -8,7 +8,7 @@ GPIO.setmode(GPIO.BCM)
 motorPins = [18, 23, 24, 25]
 
 # Define the direction pins
-directionPins = [17, 27]
+directionPins = [11, 13]
 
 # Set up the motor pins as output pins
 for pin in motorPins:
