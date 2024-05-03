@@ -27,6 +27,9 @@ def set_direction(pin, direction):
     else:
         raise ValueError("Invalid direction")
 
+# Create a PWM object for the motor
+pwm = GPIO.PWM(motorPins[0], 100)
+
 # Define the function to set the speed of the motor
 def set_speed(speed):
     if speed < 0 or speed > 100:
@@ -40,16 +43,11 @@ def set_speed(speed):
     else:
         for pin in directionPins:
             set_direction(pin, GPIO.HIGH)
-    GPIO.output(motorPins[0], GPIO.HIGH)
-    GPIO.output(motorPins[1], GPIO.LOW)
-    GPIO.output(motorPins[2], GPIO.HIGH)
-    GPIO.output(motorPins[3], GPIO.LOW)
-    pwm = GPIO.PWM(motorPins[0], 100)
-    pwm.start(duty_cycle)
     pwm.ChangeDutyCycle(duty_cycle)
 
 # Define the function to stop the motor
 def stop_motor():
+    pwm.stop()
     for pin in motorPins:
         GPIO.output(pin, GPIO.LOW)
     for pin in directionPins:
@@ -58,6 +56,9 @@ def stop_motor():
 # Set the direction of the motor to forward
 for pin in directionPins:
     set_direction(pin, GPIO.HIGH)
+
+# Start the PWM
+pwm.start(0)
 
 # Set the speed of the motor to 50%
 set_speed(50)
