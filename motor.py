@@ -5,7 +5,7 @@ import time
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 # Define the motor pins
-motorPins = [18 ,12]
+motorPins = [12, 32]
 
 # Define the direction pins
 directionPins = [11, 13]
