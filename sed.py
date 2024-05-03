@@ -3,6 +3,7 @@ import time
 
 # Set up the GPIO pins
 GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
 
 # Define the motor pins
 motorPin1 = 17
