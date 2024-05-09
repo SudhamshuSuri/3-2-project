@@ -11,7 +11,7 @@ GPIO.setup(servo_pin, GPIO.OUT)
 
 GPIO.setup(27, GPIO.OUT)
 # Create PWM instance
-servo_pwm = GPIO.PWM(servo_pin, 100)  # Frequency = 50Hz (standard for servo motors)
+servo_pwm = GPIO.PWM(servo_pin, 50)  # Frequency = 50Hz (standard for servo motors)
 
 # Start PWM
 servo_pwm.start(0)
