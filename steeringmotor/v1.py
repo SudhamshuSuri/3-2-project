@@ -43,15 +43,23 @@ while True:
         print("Invalid input. Please enter 'l' to turn left or 'r' to turn right.")
         continue
 '''
-
+sleep(1)
 GPIO.output(27, GPIO.LOW)
+
+sleep(1)
 
 for i in range (101):
     servo_pwm.ChangeDutyCycle(i)
     sleep(0.5)
+
+sleep(1)
 
 GPIO.output(27, GPIO.HIGH)
 
+sleep(1)
+
 for i in range (101):
     servo_pwm.ChangeDutyCycle(i)
     sleep(0.5)
+
+sleep(1)
