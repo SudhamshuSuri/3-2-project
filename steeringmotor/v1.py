@@ -35,7 +35,7 @@ while True:
 
     # Turn right
     if direction == 'r':
-        steer(0)   # Set servo angle to 0 degrees (right)
+        steer(1)   # Set servo angle to 0 degrees (right)
     
     else:
         print("Invalid input. Please enter 'l' to turn left or 'r' to turn right.")
