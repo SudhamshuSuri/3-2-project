@@ -10,6 +10,7 @@ GPIO.setmode(GPIO.BCM)
 # Set servo pin as output
 GPIO.setup(servo_pin, GPIO.OUT)
 
+GPIO.setup(27, GPIO.OUT)
 # Create PWM instance
 servo_pwm = GPIO.PWM(servo_pin, 100)  # Frequency = 50Hz (standard for servo motors)
 
@@ -42,6 +43,14 @@ while True:
         print("Invalid input. Please enter 'l' to turn left or 'r' to turn right.")
         continue
 '''
+
+GPIO.output(27, GPIO.LOW)
+
+for i in range (101):
+    servo_pwm.ChangeDutyCycle(i)
+    sleep(0.5)
+
+GPIO.output(27, GPIO.HIGH)
 
 for i in range (101):
     servo_pwm.ChangeDutyCycle(i)
