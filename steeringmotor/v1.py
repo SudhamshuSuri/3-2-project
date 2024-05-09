@@ -16,6 +16,7 @@ servo_pwm = GPIO.PWM(servo_pin, 50)  # Frequency = 50Hz (standard for servo moto
 # Start PWM
 servo_pwm.start(0)
 
+
 def steer(angle):
     # Convert angle (0-180) to duty cycle (2-12)
     duty_cycle = (angle / 18) + 2
