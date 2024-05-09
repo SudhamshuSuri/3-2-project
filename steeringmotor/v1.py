@@ -24,13 +24,20 @@ def steer(angle):
 
 try:
     while True:
-        # Example: Turn left (90 degrees)
-        steer(90)
-        time.sleep(2)  # Wait for 2 seconds
+        # Prompt user for input
+        direction = input("Enter 'l' to turn left or 'r' to turn right: ")
 
-        # Example: Turn right (45 degrees)
-        steer(45)
-        time.sleep(2)  # Wait for 2 seconds
+        # Turn left
+        if direction == 'l':
+            steer(90)  # Set servo angle to 90 degrees (left)
+        
+        # Turn right
+        elif direction == 'r':
+            steer(0)   # Set servo angle to 0 degrees (right)
+        
+        else:
+            print("Invalid input. Please enter 'l' to turn left or 'r' to turn right.")
+            continue
 
 except KeyboardInterrupt:
     pass
