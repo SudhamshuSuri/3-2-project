@@ -15,7 +15,7 @@ for pin in motorPins:
     GPIO.setup(pin, GPIO.OUT)
 
 # Set up the direction pins as output pins
-for pin in directionPins:
+for pin in directionPins:       
     GPIO.setup(pin, GPIO.OUT)
 
 # Define the function to set the direction of the motor

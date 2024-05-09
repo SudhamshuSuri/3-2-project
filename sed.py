@@ -7,7 +7,7 @@ GPIO.setwarnings(False)
 
 # Define the motor pins
 motorPin1 = 17
-motorPin2 = 22
+motorPin2 = 27
 enablePin = 23
 
 # Set up the motor pins as output pins
