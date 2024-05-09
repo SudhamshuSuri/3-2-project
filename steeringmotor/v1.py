@@ -1,6 +1,5 @@
 import RPi.GPIO as GPIO
-from time import sleep
-
+import time
 # Define servo pin
 servo_pin = 17  # PWM pin for servo motor
 
@@ -17,8 +16,7 @@ servo_pwm = GPIO.PWM(servo_pin, 100)  # Frequency = 50Hz (standard for servo mot
 # Start PWM
 servo_pwm.start(0)
 
-
-'''def steer(angle):
+def steer(angle):
     # Convert angle (0-180) to duty cycle (2-12)
     duty_cycle = (angle / 18) + 10
     servo_pwm.ChangeDutyCycle(duty_cycle)
@@ -42,24 +40,3 @@ while True:
     else:
         print("Invalid input. Please enter 'l' to turn left or 'r' to turn right.")
         continue
-'''
-sleep(1)
-GPIO.output(27, GPIO.LOW)
-
-sleep(1)
-
-for i in range (101):
-    servo_pwm.ChangeDutyCycle(i)
-    sleep(0.5)
-
-sleep(1)
-
-GPIO.output(27, GPIO.HIGH)
-
-sleep(1)
-
-for i in range (101):
-    servo_pwm.ChangeDutyCycle(i)
-    sleep(0.5)
-
-sleep(1)
