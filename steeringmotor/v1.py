@@ -22,28 +22,21 @@ def steer(angle):
     servo_pwm.ChangeDutyCycle(duty_cycle)
     time.sleep(0.5)  # Adjust this delay as needed for your servo motor
 
-try:
-    while True:
-        # Prompt user for input
-        direction = input("Enter 'l' to turn left or 'r' to turn right: ")
 
-        # Turn left
-        if direction == 'l':
-            steer(90)  # Set servo angle to 90 degrees (left)
-        
-        # Turn right
-        elif direction == 'r':
-            steer(0)   # Set servo angle to 0 degrees (right)
-        
-        else:
-            print("Invalid input. Please enter 'l' to turn left or 'r' to turn right.")
-            continue
+while True:
+    # Prompt user for input
+    direction = input("Enter 'l' to turn left or 'r' to turn right: ")
 
-except KeyboardInterrupt:
-    pass
+    # Turn left
+    if direction == 'l':
+        steer(90)
+    
+    print(f'we turned this way {direction}')
 
-# Stop PWM
-servo_pwm.stop()
-
-# Cleanup GPIO
-GPIO.cleanup()
+    # Turn right
+    if direction == 'r':
+        steer(0)   # Set servo angle to 0 degrees (right)
+    
+    else:
+        print("Invalid input. Please enter 'l' to turn left or 'r' to turn right.")
+        continue
