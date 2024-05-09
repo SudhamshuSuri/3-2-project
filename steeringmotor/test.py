@@ -1,5 +1,4 @@
 import RPi.GPIO as GPIO
-import time
 
 # Define servo pin
 servo_pin = 17  # PWM pin for servo motor
